@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Catalog Project </title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+      /* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  object-fit: contain;
+  overflow: visible;
+  position: relative;
+  margin: auto;
+  z-index: 1;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+
+      <nav class="navbar">
+
+        <ul>
+         <li> <a href="index.html"> Αρχική </a></li>
+         <li class="dropdown"> <a href="javascript:void(0)" class="dropbtn"> Ένδυση </a>
+    <div class="dropdown-content">
+      <a href="clothes.html"> Μπλούζες </a>
+      <a href="trousers.html"> Παντελόνια </a>
+      <a href="jackets.html"> Πανωφόρια </a>
+    </div></li>
+         <li> <a href="shoes.html"> Υποδήματα </a></li>
+         <li class="dropdown"> <a href="javascript:void(0)" class="dropbtn"> Επαγγελματική Ενδυμασία </a>
+          <div class="dropdown-content">
+            <a href="workwear.html"> Στολές Εργασίας</a>
+            <a href="HV.html"> Υψηλής Ορατότητας</a>
+          </div>
+        </li>
+        <li> <a href="accessories.html"> Αξεσουάρ </a></li>
+         <li> <a href="disposable.html"> Μ.Α.Π. </a></li>
+        </ul>
+
+      </nav>
+
+    </header>
+
+    
+
+ 
+  
+   <!-- slideshow-->
+
+    <div class="slideshow-container">
+
+<div class="mySlides fade">
+    <img src="images/photo.jpg/print.jpg" alt="print" style="width: 100%; height: auto; object-fit: contain; border-radius: 20px;">
+</div>
+
+<div class="mySlides fade">
+<img src="images/photo.jpg/kentima.jpg" alt="kentima" style="width: 100%; height: auto; object-fit: contain; border-radius: 20px;">
+</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> </div>
+  
+</div>
+
+    <div class="catalog">
+    <div class="product">
+      <h2>Το σχέδιό σας - Το ρούχο σας - Η εκτύπωσή σας</h2>
+      <p>Επαγγελματικές DTF εκτυπώσεις υψηλής ποιότητας σε μπλουζάκια, φούτερ, polo, ρούχα εργασίας και διαφημιστική ένδυση. </p>
+      <p>Δημιουργούμε εντυπωσιακές και ανθεκτικές εκτυπώσεις με ζωντανά χρώματα και εξαιρετική λεπτομέρεια, για επιχειρήσεις, επαγγελματίες, ομάδες, συλλόγους και events.</p>
+      </div>
+      
+      <div class="product">
+      <h2>Ρούχα Εργασίας </h2>
+      <p>Κάντε την ομάδα σας να ξεχωρίζει με προσωποποιημένα ρούχα εργασίας με το λογότυπο και τα στοιχεία της επιχείρησής σας.</p>
+      <p>Μπλουζάκια, polo, φούτερ και άλλα είδη επαγγελματικής ένδυσης, σχεδιασμένα για να δημιουργούν μια ενιαία και επαγγελματική εικόνα.</p>
+      </div>
+
+      <div class="product">
+      <h2>Διαφημιστικά Μπλουζάκια</h2>
+      <p>Μετατρέψτε ένα απλό μπλουζάκι σε ένα αποτελεσματικό διαφημιστικό εργαλείο. Ιδανικά για επιχειρήσεις, εκδηλώσεις, εγκαίνια, προσφορές, ομάδες, συλλόγους, events και διαφημιστικές καμπάνιες.</p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
+
+</body>
+
+</html>
