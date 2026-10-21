@@ -742,7 +742,56 @@
          </div>
           </div>
 
-          
+          <script>
+    document.querySelectorAll('.product-colors').forEach(function(container) {
+
+        const colors = container.querySelectorAll('.color');
+        const maxVisible = 7;
+
+        // Αν έχει 6 ή λιγότερα, δεν χρειάζεται κουμπί
+        if (colors.length <= maxVisible) {
+            return;
+        }
+
+        // Κρύψε όλα τα χρώματα μετά τα 6
+        colors.forEach(function(color, index) {
+            if (index >= maxVisible) {
+                color.classList.add('hidden');
+            }
+        });
+
+        // Υπολόγισε πόσα χρώματα είναι κρυφά
+        const hiddenCount = colors.length - maxVisible;
+
+        // Δημιούργησε το κουμπί
+        const button = document.createElement('button');
+
+        button.className = 'show-more';
+        button.textContent = '+' + hiddenCount + ' ακόμα';
+
+        // Πρόσθεσε το κουμπί
+        container.appendChild(button);
+
+        // Όταν πατηθεί
+        button.addEventListener('click', function() {
+
+            const isHidden = colors[7].classList.contains('hidden');
+
+            colors.forEach(function(color, index) {
+                if (index >= maxVisible) {
+                    color.classList.toggle('hidden', !isHidden);
+                }
+            });
+
+            if (isHidden) {
+                button.textContent = 'Λιγότερα';
+            } else {
+                button.textContent = '+' + hiddenCount + ' ακόμα';
+            }
+        });
+
+    });
+</script>
 
 </body>
 </html>
